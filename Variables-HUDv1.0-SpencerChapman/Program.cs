@@ -21,7 +21,7 @@ namespace Variables_HUDv1._0_SpencerChapman
             float boar;
             int maxHealth;
 
-            Score = 00000000.0f;
+            Score = 0.0f;
             Health = 100;
             Lives = 3;
             ScoreMultiplier = 1.0f;
@@ -211,7 +211,9 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("Goliath crumbles to the ground");
             Console.WriteLine("");
             Console.WriteLine("");
+
             Score = Score + goliath * ScoreMultiplier;
+
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
             Console.WriteLine("Health: " + Health + " Weapon: " + WeaponDurability + " Shield: " + ShieldDurability);
