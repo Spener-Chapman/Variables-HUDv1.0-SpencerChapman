@@ -162,9 +162,26 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("Goliath swipes");
             Console.WriteLine("It connects!");
             Console.WriteLine("");
-
+            Health = Health - 25;
+            Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
+            Console.WriteLine("Health: " + Health + " Weapon: " + WeaponDurability + " Shield: " + ShieldDurability);
             Console.WriteLine("");
+            Console.WriteLine("Player attacks");
+            Console.WriteLine("Critical hit!");
+            Console.WriteLine("");
+            Console.WriteLine("Goliath crumbles to the ground");
+            Console.WriteLine("");
+            Score = Score + goliath * ScoreMultiplier;
+
+            Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
+            Console.WriteLine("Health: " + Health + " Weapon: " + WeaponDurability + " Shield: " + ShieldDurability);
+            Console.WriteLine("");
+            
+
+
+
             Console.ReadKey(true);
+
 
         }
     }
