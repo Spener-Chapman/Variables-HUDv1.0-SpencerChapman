@@ -57,7 +57,7 @@ namespace Variables_HUDv1._0_SpencerChapman
             nymphheal = 10;
 
             Console.WriteLine("");
-            Console.WriteLine("A Last Ditch Efforts game");
+            Console.WriteLine("-A Last Ditch Efforts game-");
             Console.WriteLine("");
             Console.WriteLine("////Deepest Depths////");
             Console.WriteLine("");
@@ -203,11 +203,12 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("");
             Console.WriteLine("Boar is defeated");
             Console.WriteLine("");
-            Console.WriteLine("Player gains " + boar + " points");
+            Score = Score + boar * ScoreMultiplier;
+            Console.WriteLine("Player gains " + boar + " points thanks to the " + ScoreMultiplier + " score multiplier");
             Console.WriteLine("");
             Console.WriteLine("");
             WeaponDurability = WeaponDurability - boarweapon;
-            Score = Score + boar * ScoreMultiplier;
+            
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
@@ -263,11 +264,12 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("");
             Console.WriteLine("Goliath crumbles to the ground");
             Console.WriteLine("");
-            Console.WriteLine("Player gains " + goliath + " points!");
+            Score = Score + goliath * ScoreMultiplier;
+            Console.WriteLine("Player gains " + goliath + " points thanks to the " + ScoreMultiplier + " score multiplier");
             Console.WriteLine("");
             Console.WriteLine("");
 
-            Score = Score + goliath * ScoreMultiplier;
+           
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
@@ -276,7 +278,7 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Player finds the lost treasure!");
-
+            
             Console.ReadKey(true);
 
 
