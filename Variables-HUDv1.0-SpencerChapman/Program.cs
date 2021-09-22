@@ -13,13 +13,25 @@ namespace Variables_HUDv1._0_SpencerChapman
             float Score;
             int Health;
             int Lives;
+            int death;
             float ScoreMultiplier;
             int WeaponDurability;
             int ShieldDurability;
+            float nymphheal;
             float goblin;
+            int goblinweapon;
+            int goblindamage;
             float goliath;
+            int goliathweapon;
+            int goliathdamage;
+            int goliathshield;
+            int goliathcritical;
+            int goliathstomp;
             float boar;
+            int boardamage;
+            int boarweapon;
             int maxHealth;
+            float totem;
 
             Score = 0.0f;
             Health = 100;
@@ -31,7 +43,20 @@ namespace Variables_HUDv1._0_SpencerChapman
             goliath = 100.0f;
             boar = 10.0f;
             maxHealth = 100;
+            goblindamage = 15;
+            goblinweapon = 3;
+            totem = 0.2f;
+            goliathshield = 25;
+            goliathcritical = 75;
+            goliathweapon = 12;
+            goliathstomp = 10;
+            goliathdamage = 25;
+            boardamage = 10;
+            boarweapon = 3;
+            death = 1;
+            nymphheal = 10;
 
+            Console.WriteLine("");
             Console.WriteLine("A Last Ditch Efforts game");
             Console.WriteLine("");
             Console.WriteLine("////Deepest Depths////");
@@ -47,12 +72,14 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("Player enters the jungle");
             Console.WriteLine("Player encounters a goblin");
             Console.WriteLine("");
-            Console.WriteLine("Goblin Strikes");
+            Console.WriteLine("Goblin Strikes!");
+            Console.WriteLine("Goblin deals " + goblindamage + " damage!");
+            Console.WriteLine("");
             Console.WriteLine("Player Strikes");
+            Console.WriteLine("Weapon loses " + goblinweapon + " durability");
             Console.WriteLine("");
-            Console.WriteLine("");
-            Health = Health - 15;
-            WeaponDurability = WeaponDurability - 3;
+            Health = Health - goblindamage;
+            WeaponDurability = WeaponDurability - goblinweapon;
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
@@ -61,6 +88,8 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Goblin faints");
+            Console.WriteLine("Player gains " +  goblin + " points");
+            Console.WriteLine("");
             Score = Score + goblin;
             Console.WriteLine("Player continues forward");
             Console.WriteLine("");
@@ -73,22 +102,26 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("");
             Console.WriteLine("Player encounters a chest");
             Console.WriteLine("There was a score totem inside");
-            Console.WriteLine("Score gained is now upgraded");
+            ScoreMultiplier = ScoreMultiplier + totem;
+            Console.WriteLine("");
+            Console.WriteLine("Score now has a " + ScoreMultiplier + " multiplier!");
             Console.WriteLine("");
 
-            ScoreMultiplier = 1.2f;
             Console.WriteLine("Player continues forward");
+            Console.WriteLine("");
             Console.WriteLine("Player encounters a stone goliath");
             Console.WriteLine("");
 
             Console.WriteLine("Goliath strikes");
             Console.WriteLine("Player blocks the attack");
             Console.WriteLine("");
+            Console.WriteLine("Shield takes " + goliathshield + " points of damage!");
+            Console.WriteLine("");
             Console.WriteLine("Player attacks");
             Console.WriteLine("It misses");
             Console.WriteLine("");
             Console.WriteLine("");
-            ShieldDurability = ShieldDurability - 24;
+            ShieldDurability = ShieldDurability - goliathshield;
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
@@ -99,8 +132,10 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("Goliath attacks");
             Console.WriteLine("Critical hit!");
             Console.WriteLine("");
+            Console.WriteLine("Player takes " + goliathcritical + " points of damage!");
             Console.WriteLine("");
-            Health = Health - 75;
+            Console.WriteLine("");
+            Health = Health - goliathcritical;
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
@@ -113,7 +148,9 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("It Lands!");
             Console.WriteLine("");
             Console.WriteLine("");
-            WeaponDurability = WeaponDurability - 12;
+            Console.WriteLine("Weapon loses " + goliathweapon + " durability");
+            Console.WriteLine("");
+            WeaponDurability = WeaponDurability - goliathweapon;
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
@@ -130,18 +167,19 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("");
             Console.WriteLine("");
 
-            Health = Health - 10;
+            Health = Health - goliathstomp;
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
             Console.WriteLine("Health: " + Health + " Weapon: " + WeaponDurability + " Shield: " + ShieldDurability);
             Console.WriteLine("-------------------------------------");
 
-            Health = 100;
-            Lives = Lives - 1;
+            Health = maxHealth;
+            Lives = Lives - death;
             Console.WriteLine("");
             Console.WriteLine("");
-            
+            Console.WriteLine(Lives + " lives remaining");
+            Console.WriteLine("");
             Console.WriteLine("The player wakes up somewhere in the jungle");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -149,18 +187,26 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
             Console.WriteLine("Health: " + Health + " Weapon: " + WeaponDurability + " Shield: " + ShieldDurability);
             Console.WriteLine("-------------------------------------");
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine("Player encounters a Boar");
             Console.WriteLine("");
             Console.WriteLine("Boar charges!");
             Console.WriteLine("Boar connects their charge");
-            Health = Health - 10;
+            Console.WriteLine("");
+            Console.WriteLine("Player loses " + " points of health");
+            Health = Health - boardamage;
             Console.WriteLine("Player attacks");
             Console.WriteLine("It connects!");
             Console.WriteLine("");
+            Console.WriteLine("Weapon loses " + boarweapon + " points of durability");
+            Console.WriteLine("");
             Console.WriteLine("Boar is defeated");
             Console.WriteLine("");
+            Console.WriteLine("Player gains " + boar + " points");
             Console.WriteLine("");
-            WeaponDurability = WeaponDurability - 4;
+            Console.WriteLine("");
+            WeaponDurability = WeaponDurability - boarweapon;
             Score = Score + boar * ScoreMultiplier;
 
             Console.WriteLine("-------------------------------------");
@@ -170,7 +216,7 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Player encounters a nymph");
-            Console.WriteLine("Nymph heals the player");
+            Console.WriteLine("Nymph heals the player for " + nymphheal + " health points!");
             Console.WriteLine("");
             Console.WriteLine("player at max health");
             Console.WriteLine("");
@@ -190,13 +236,18 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("");
             Console.WriteLine("Player Strikes");
             Console.WriteLine("It lands!");
-            WeaponDurability = WeaponDurability - 12;
+            Console.WriteLine("");
+            Console.WriteLine("Weapon loses " + goliathweapon + " durability");
+            Console.WriteLine("");
+            WeaponDurability = WeaponDurability - goliathweapon;
             Console.WriteLine("");
             Console.WriteLine("Goliath swipes");
             Console.WriteLine("It connects!");
             Console.WriteLine("");
+            Console.WriteLine("Player loses " + goliathdamage + " points of health");
             Console.WriteLine("");
-            Health = Health - 25;
+            Console.WriteLine("");
+            Health = Health - goliathdamage;
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("Lives: " + Lives + "    " + "Score: " + Score);
@@ -208,7 +259,11 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("Player attacks");
             Console.WriteLine("Critical hit!");
             Console.WriteLine("");
+            Console.WriteLine("Weapon loses " + goliathweapon + " points of durability");
+            Console.WriteLine("");
             Console.WriteLine("Goliath crumbles to the ground");
+            Console.WriteLine("");
+            Console.WriteLine("Player gains " + goliath + " points!");
             Console.WriteLine("");
             Console.WriteLine("");
 
@@ -220,7 +275,7 @@ namespace Variables_HUDv1._0_SpencerChapman
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("Player finds the treasure!");
+            Console.WriteLine("Player finds the lost treasure!");
 
             Console.ReadKey(true);
 
